@@ -9,7 +9,9 @@ from langchain.callbacks.base import BaseCallbackHandler
 from ghostcoder import Ghostcoder
 from ghostcoder.schema import TextItem
 
-# openai.api_key = st.secrets["OPENAI_API_KEY"]
+st.sidebar.text_input("key", key="OPENAI_API_KEY")
+
+openai.api_key = st.session_state.get("OPENAI_API_KEY","")
 
 
 logging_format = '%(asctime)s - %(levelname)s - %(message)s'
